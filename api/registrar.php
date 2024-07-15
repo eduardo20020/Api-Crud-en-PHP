@@ -23,15 +23,24 @@ $contra = $ArrarDecodificado['contra'];
 
 //////////////
 include "cnx.php";
-// Consulta SQL para insertar datos
-$sql = "INSERT INTO Usuarios (nombre, correo, contra) VALUES ('$nombre', '$correo', '$contra')";
+// Comprobar si el correo ya existe
+$sql_check = "SELECT * FROM Usuarios WHERE correo = '$correo'";
+$result = $conn->query($sql_check);
 
-// Ejecutar consulta y verificar inserción
-if ($conn->query($sql) === TRUE) {
-    echo "Datos insertados correctamente";
+if ($result->num_rows > 0) {
+    echo "El correo ya existe. No se puede insertar.";
 } else {
-    echo "Error al insertar datos: " . $conn->error;
+    // Consulta SQL para insertar datos
+    $sql_insert = "INSERT INTO Usuarios (nombre, correo, contra) VALUES ('$nombre', '$correo', '$contra')";
+
+    // Ejecutar consulta y verificar inserción
+    if ($conn->query($sql_insert) === TRUE) {
+        echo "Datos insertados correctamente";
+    } else {
+        echo "Error al insertar datos: " . $conn->error;
+    }
 }
 
-
+// Cerrar conexión
+$conn->close();
 ?>
