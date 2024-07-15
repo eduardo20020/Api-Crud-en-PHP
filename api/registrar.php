@@ -28,16 +28,16 @@ $sql_check = "SELECT * FROM Usuarios WHERE correo = '$correo'";
 $result = $conn->query($sql_check);
 
 if ($result->num_rows > 0) {
-    echo "El correo ya existe. No se puede insertar.";
+    echo "\nEl correo ya existe. No se puede insertar.";
 } else {
     // Consulta SQL para insertar datos
     $sql_insert = "INSERT INTO Usuarios (nombre, correo, contra) VALUES ('$nombre', '$correo', '$contra')";
 
     // Ejecutar consulta y verificar inserción
     if ($conn->query($sql_insert) === TRUE) {
-        echo "Datos insertados correctamente";
+        echo "\nDatos insertados correctamente";
     } else {
-        echo "Error al insertar datos: " . $conn->error;
+        echo "\nError al insertar datos: " . $conn->error;
     }
 }
 
