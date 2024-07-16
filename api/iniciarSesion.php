@@ -18,6 +18,7 @@ if(!isset($datos['correo']) || !isset($datos['contra'])){
 // Obtener los valores de correo y contra del arreglo decodificado
 $correo = $datos['correo'];
 $contra = $datos['contra'];
+include "cnx.php";
 
 $sql = "SELECT correo, contra FROM Usuarios WHERE correo = '$correo' AND contra = '$contra'";
 $result = $conn->query($sql);
@@ -27,3 +28,5 @@ if ($result->num_rows > 0) {
 } else {
 
 }
+
+?>
