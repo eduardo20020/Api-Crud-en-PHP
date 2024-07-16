@@ -41,4 +41,5 @@ if ($result->num_rows > 0) {
 // Cerrar la conexión
 $stmt->close();
 $conn->close();
+
 ?>
