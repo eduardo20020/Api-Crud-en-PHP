@@ -27,7 +27,7 @@ if (!$conn) {
 }
 
 // Preparar y ejecutar la consulta segura para evitar SQL Injection
-$stmt = $conn->prepare("SELECT correo, contra FROM Usuarios WHERE correo = ? AND contra = ?");
+$stmt = $conn->prepare("SELECT nombre, correo, contra FROM Usuarios WHERE correo = ? AND contra = ?");
 $stmt->bind_param("ss", $correo, $contra);
 $stmt->execute();
 $result = $stmt->get_result();
@@ -40,7 +40,7 @@ if ($result->num_rows > 0) {
         "nombre" => $usuario['nombre'],
         "correo" => $usuario['correo']
     ]);
-    
+
 } else {
     echo "Correo o contraseña incorrectos";
 }
