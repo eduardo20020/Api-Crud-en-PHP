@@ -43,7 +43,7 @@ if ($result->num_rows > 0) {
 
 } else {
     echo json_encode([
-        "mensaje" => "Inicio de sesion correcto"
+        "mensaje" => "nombre o contrase na incorrectods"
     ]);
 }
 
