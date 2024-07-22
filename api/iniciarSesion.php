@@ -33,7 +33,14 @@ $stmt->execute();
 $result = $stmt->get_result();
 
 if ($result->num_rows > 0) {
-    echo "Inicio de sesion correcto";
+
+    $usuario = $result->fetch_assoc();
+    echo json_encode([
+        "mensaje" => "Inicio de sesion correcto",
+        "nombre" => $usuario['nombre'],
+        "correo" => $usuario['correo']
+    ]);
+    
 } else {
     echo "Correo o contraseña incorrectos";
 }
