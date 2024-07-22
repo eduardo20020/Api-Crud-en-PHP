@@ -33,7 +33,7 @@ $stmt->execute();
 $result = $stmt->get_result();
 
 if ($result->num_rows > 0) {
-    echo json_encode(["message" => "Inicio de sesión correcto"]);
+    echo "Inicio de sesion correcto";
 } else {
     echo json_encode(["error" => "Correo o contraseña incorrectos"]);
 }
