@@ -42,7 +42,9 @@ if ($result->num_rows > 0) {
     ]);
 
 } else {
-    echo "Correo o contraseña incorrectos";
+    echo json_encode([
+        "mensaje" => "Inicio de sesion correcto"
+    ]);
 }
 
 // Cerrar la conexión
