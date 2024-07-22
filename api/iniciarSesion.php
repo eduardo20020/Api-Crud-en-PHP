@@ -35,7 +35,7 @@ $result = $stmt->get_result();
 if ($result->num_rows > 0) {
     echo "Inicio de sesion correcto";
 } else {
-    echo json_encode(["error" => "Correo o contraseña incorrectos"]);
+    echo "Correo o contraseña incorrectos";
 }
 
 // Cerrar la conexión
