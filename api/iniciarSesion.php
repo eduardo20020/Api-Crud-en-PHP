@@ -27,7 +27,7 @@ if (!$conn) {
 }
 
 // Preparar y ejecutar la consulta segura para evitar SQL Injection
-$stmt = $conn->prepare("SELECT nombre, correo, contra FROM Usuarios WHERE correo = ? AND contra = ?");
+$stmt = $conn->prepare("SELECT nombre, correo, contra, progreso FROM Usuarios WHERE correo = ? AND contra = ?");
 $stmt->bind_param("ss", $correo, $contra);
 $stmt->execute();
 $result = $stmt->get_result();
@@ -38,7 +38,10 @@ if ($result->num_rows > 0) {
     echo json_encode([
         "mensaje" => "Inicio de sesion correcto",
         "nombre" => $usuario['nombre'],
-        "correo" => $usuario['correo']
+        "correo" => $usuario['correo'],
+        "progreso" => $usuario['progreso']
+
+
     ]);
 
 } else {
