@@ -31,7 +31,7 @@ if ($result->num_rows > 0) {
     echo "El correo ya existe";
 } else {
     // Consulta SQL para insertar datos
-    $sql_insert = "INSERT INTO Usuarios (nombre, correo, contra) VALUES ('$nombre', '$correo', '$contra')";
+    $sql_insert = "INSERT INTO Usuarios (nombre, correo, contra, progreso) VALUES ('$nombre', '$correo', '$contra', '0%')";
 
     // Ejecutar consulta y verificar inserción
     if ($conn->query($sql_insert) === TRUE) {
