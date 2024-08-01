@@ -41,7 +41,7 @@ try {
 
     // Verificar si se actualizó alguna fila
     if ($stmt->affected_rows > 0) {
-        echo json_encode(["success" => "Datos actualizados correctamente"]);
+        echo json_encode(["mensaje" => "Datos actualizados correctamente"]);
     } else {
         echo json_encode(["error" => "No se encontró el usuario o no hubo cambios"]);
     }
