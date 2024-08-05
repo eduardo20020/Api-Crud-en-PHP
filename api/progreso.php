@@ -1,5 +1,4 @@
 <?php
-
 // Obtener y decodificar el JSON recibido
 $datos = json_decode(file_get_contents('php://input'), true);
 
