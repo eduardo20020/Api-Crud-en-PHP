@@ -2,39 +2,39 @@
 // Definir el array de datos
 $data = [
     [
-        "nombre" => "seccion1",
+        "nombre" => "Introducción a la Presupuestación de Proyectos",
         "subtemas" => [
-            "aqui va el contenido del subtema1 dxdxd lorem20",
-            "aqui va el contenido del subtema1 dxdxd",
-            "aqui va el contenido del subtema1 dxdxd",
-            "aqui va el contenido del subtema1 dxdxd"
+            "Conceptos Básicos de Presupuestación",
+            "Importancia de la Presupuestación",
+            "Tipos de Presupuestos",
+            "Factores que Afectan el Presupuesto de un Proyecto"
         ]
     ],
     [
-        "nombre" => "seccion2",
+        "nombre" => "Componentes del Presupuesto de un Proyecto",
         "subtemas" => [
-            "aqui va el contenido del subtema2 dxdxd",
-            "aqui va el contenido del subtema2 dxdxd",
-            "aqui va el contenido del subtema2 dxdxd",
-            "aqui va el contenido del subtema2 dxdxd"
+            "Desglose Estructurado del Presupuesto",
+            "Identificación de Costos Directos e Indirectos",
+            "Métodos para Estimar Costos",
+            "Herramientas de Software para la Presupuestación"
         ]
     ],
     [
-        "nombre" => "seccion3",
+        "nombre" => "Gestión Financiera del Proyecto",
         "subtemas" => [
-            "aqui va el contenido del subtema3 dxdxd",
-            "aqui va el contenido del subtema3 dxdxd",
-            "aqui va el contenido del subtema3 dxdxd",
-            "aqui va el contenido del subtema3 dxdxd"
+            "Control de Costos y Desviaciones Presupuestarias",
+            "Técnicas de Seguimiento y Control Financiero",
+            "Análisis de la Viabilidad Financiera de un Proyecto",
+            "Estrategias para la Gestión de Riesgos Financieros"
         ]
     ],
     [
-        "nombre" => "seccion4",
+        "nombre" => "Evaluación y Cierre Financiero de Proyectos",
         "subtemas" => [
-            "aqui va el contenido del subtema4 dxdxd",
-            "aqui va el contenido del subtema4 dxdxd",
-            "aqui va el contenido del subtema4 dxdxd",
-            "aqui va el contenido del subtema4 dxdxd"
+            "Evaluación del Rendimiento Financiero del Proyecto",
+            "Métodos para la Evaluación del Valor Ganado (EVM)",
+            "Preparación de Informes Financieros de Cierre de Proyecto",
+            "Lecciones Aprendidas y Retroalimentación para Futuros Proyectos"
         ]
     ]
 ];
