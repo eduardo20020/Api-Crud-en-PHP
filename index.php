@@ -25,7 +25,7 @@
                     </div>
                     <div class="mb-3">
                         <label for="recursos" class="form-label">Recursos:</label>
-                        <textarea name="recursos" class="form-control" rows="3" required></textarea>
+                        <input name="recursos" class="form-control" rows="3" required></input>
                     </div>
                     <button type="submit" class="btn btn-primary w-100">Enviar</button>
                 </form>
