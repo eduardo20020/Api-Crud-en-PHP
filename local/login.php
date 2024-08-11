@@ -5,7 +5,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $contra = $_POST['contra'];
 
 
-    if($correo = 'admin@admin' && $contra = 'admin'){
+    if($correo == 'admin@admin' && $contra == 'admin'){
         session_start();
 
         // Suponiendo que validas el usuario y la contraseña correctamente
