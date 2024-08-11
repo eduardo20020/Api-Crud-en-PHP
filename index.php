@@ -60,7 +60,7 @@
                                 <td>" . htmlspecialchars($row['recursos']) . "</td>
                                 <td class='text-center'>
                                     <form action='edit.php' method='post' class='d-inline'>
-                                        <input type='hidden' name='id' value='" . htmlspecialchars($row['id_leccion']) . "'>
+                                        <input type='hidden' name='id_leccion' value='" . htmlspecialchars($row['id_leccion']) . "'>
                                         <button type='submit' class='btn btn-sm btn-success'>Editar</button>
                                     </form>
                                     <form action='delete.php' method='post' class='d-inline'>
