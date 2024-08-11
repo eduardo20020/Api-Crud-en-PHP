@@ -90,6 +90,23 @@
             ?>
         </div>
     </div>
+
+
+    <form action="api/ingresarleccion.php" method="post">
+        <label for="leccion">Lección:</label>
+        <input type="text" name="leccion" required><br><br>
+        
+        <label for="contenido">Contenido:</label>
+        <textarea  name="contenido" required></textarea><br><br>
+        
+        <label for="ejemplos">Ejemplos:</label>
+        <textarea  name="ejemplos"  required></textarea><br><br>
+        
+        <label for="recursos">Recursos:</label>
+        <textarea  name="recursos"  required></textarea><br><br>
+        
+        <button type="submit">Enviar</button>
+    </form>
 </body>
 </html>
 
