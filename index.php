@@ -46,7 +46,7 @@
         </div>
         <div class="datos">
             <?php
-            include "cnx.php";
+            include "api/cnx.php";
             
             $sql = "SELECT * FROM lecciones";
             $result = $conn->query($sql);
