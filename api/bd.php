@@ -6,7 +6,7 @@ include "cnx.php";
 $sql_check = "SELECT * FROM Usuarios";
 $result = $conn->query($sql_check);
 
-echo $result
+echo json_encode($result)
 
 
 ?>
