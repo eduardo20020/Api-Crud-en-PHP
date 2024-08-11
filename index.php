@@ -75,7 +75,7 @@
                                     <button type='submit' class='button edit-button'>Editar</button>
                                 </form>
                                 <form action='delete.php' method='post' style='display:inline;'>
-                                    <input type='hidden' name='id' value='" . htmlspecialchars($row['id']) . "'>
+                                    <input type='hidden' name='id' value='" . htmlspecialchars($row['id_leccion']) . "'>
                                     <button type='submit' class='button delete-button'>Eliminar</button>
                                 </form>
                             </td>
