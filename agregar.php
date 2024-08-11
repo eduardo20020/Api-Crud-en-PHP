@@ -97,6 +97,12 @@ if (!isset($_SESSION['logueado']) || $_SESSION['logueado'] !== true) {
 
     <!-- Incluye Bootstrap JS (Opcional) -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+    window.onbeforeunload = function() {
+        fetch('local/logout.php', { method: 'POST' });
+    };
+
+    </script>
 </body>
 </html>
 
