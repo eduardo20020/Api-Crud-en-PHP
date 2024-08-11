@@ -22,7 +22,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     $conn->close();
-    header("Location: index.php"); // Redirige a la página principal después de la eliminación
     exit;
 } else {
     echo "Método no permitido.";
