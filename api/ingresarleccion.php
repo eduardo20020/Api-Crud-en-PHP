@@ -7,7 +7,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $ejemplos = $_POST['ejemplos'];
     $recursos = $_POST['recursos'];
 
-include "../api/cnx.php";
+include "cnx.php";
  // Preparar la consulta SQL para insertar los datos
  $sql = "INSERT INTO lecciones (leccion, contenido, ejemplos, recursos) 
  VALUES (?, ?, ?, ?)";

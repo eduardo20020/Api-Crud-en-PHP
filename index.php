@@ -6,7 +6,7 @@
     <title>Insertar lecciones</title>
 </head>
 <body>
-    <form action="procesar/ingresarleccion.php" method="post">
+    <form action="api/ingresarleccion.php" method="post">
         <label>Dame el titulo de la leccion: </label>
         <input type="text" name="leccion">
 
