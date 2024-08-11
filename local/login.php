@@ -15,6 +15,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         header("Location: ../agregar.php");
         exit();
     }
+    else{
+        echo 'correo o contrasena incorrectos';
+    }
 
 
 
