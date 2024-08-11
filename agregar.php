@@ -20,6 +20,30 @@ if (!isset($_SESSION['logueado']) || $_SESSION['logueado'] !== true) {
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body class="bg-light">
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Agregar lecciones a la APP</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Características</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Precios</a>
+                    </li>
+                    <li class="nav-item">
+                        <button>salir</button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
     <div class="container mt-3">
         <div class="row">
             <div class="col-md-5">
@@ -97,12 +121,13 @@ if (!isset($_SESSION['logueado']) || $_SESSION['logueado'] !== true) {
 
     <!-- Incluye Bootstrap JS (Opcional) -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script>
+     <!--<script>
     window.onbeforeunload = function() {
         fetch('local/logout.php', { method: 'POST' });
     };
 
     </script>
+     -->
 </body>
 </html>
 
