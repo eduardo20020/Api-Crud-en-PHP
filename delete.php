@@ -1,11 +1,11 @@
 <?php
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $id = $_POST['id'];
+    $id = $_POST['id_leccion'];
 
     include "api/cnx.php";
 
     // Preparar la consulta SQL para eliminar el registro
-    $sql = "DELETE FROM lecciones WHERE id = ?";
+    $sql = "DELETE FROM lecciones WHERE id_leccion = ?";
 
     if ($stmt = $conn->prepare($sql)) {
         $stmt->bind_param("i", $id);
