@@ -21,7 +21,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Ejecutar la sentencia
         if ($stmt->execute()) {
             echo "Los datos han sido insertados correctamente.";
-            header("Location: index.php");
+            header("Location: ../index.php");
             exit();
         } else {
             echo "Error al insertar los datos: " . $stmt->error;
