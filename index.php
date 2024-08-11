@@ -2,135 +2,86 @@
 <html>
 <head>
     <title>Mostrar Lecciones</title>
-    <style>
-        .container {
-            display: flex;
-        }
-        .formulario {
-            width: 50%;
-        }
-        .datos {
-            width: 50%;
-            padding-left: 20px;
-        }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-        }
-        th, td {
-            border: 1px solid #ddd;
-            padding: 8px;
-        }
-        th {
-            background-color: #f4f4f4;
-        }
-        .button {
-            margin: 0 5px;
-            padding: 5px 10px;
-            border: none;
-            color: white;
-            cursor: pointer;
-        }
-        .edit-button {
-            background-color: #4CAF50;
-        }
-        .delete-button {
-            background-color: #f44336;
-        }
-    </style>
+    <!-- Incluye Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
-<body>
-    <div class="container">
-        <div class="formulario">
-            <!-- Aquí iría tu formulario para insertar o editar datos -->
-        </div>
-        <div class="datos">
-            <?php
-            include "api/cnx.php";
-            
-            $sql = "SELECT * FROM lecciones";
-            $result = $conn->query($sql);
-            
-            if ($result->num_rows > 0) {
-                echo "<table>
-                        <tr>
-                            <th>ID</th>
-                            <th>Lección</th>
-                            <th>Contenido</th>
-                            <th>Ejemplos</th>
-                            <th>Recursos</th>
-                            <th>Acciones</th>
-                        </tr>";
-                
-                while ($row = $result->fetch_assoc()) {
-                    echo "<tr>
-                            <td>" . htmlspecialchars($row['id_leccion']) . "</td>
-                            <td>" . htmlspecialchars($row['leccion']) . "</td>
-                            <td>" . htmlspecialchars($row['contenido']) . "</td>
-                            <td>" . htmlspecialchars($row['ejemplo']) . "</td>
-                            <td>" . htmlspecialchars($row['recursos']) . "</td>
-                            <td>
-                                <form action='edit.php' method='post' style='display:inline;'>
-                                    <input type='hidden' name='id' value='" . htmlspecialchars($row['id_leccion']) . "'>
-                                    <button type='submit' class='button edit-button'>Editar</button>
-                                </form>
-                                <form action='delete.php' method='post' style='display:inline;'>
-                                    <input type='hidden' name='id_leccion' value='" . htmlspecialchars($row['id_leccion']) . "'>
-                                    <button type='submit' class='button delete-button'>Eliminar</button>
-                                </form>
-                            </td>
-                          </tr>";
+<body class="bg-light">
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-md-6">
+                <!-- Aquí iría tu formulario para insertar o editar datos -->
+                <form action="api/ingresarleccion.php" method="post" class="card p-4 shadow-sm">
+                    <div class="mb-3">
+                        <label for="leccion" class="form-label">Lección:</label>
+                        <input type="text" name="leccion" class="form-control" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="contenido" class="form-label">Contenido:</label>
+                        <textarea name="contenido" class="form-control" rows="4" required></textarea>
+                    </div>
+                    <div class="mb-3">
+                        <label for="ejemplos" class="form-label">Ejemplos:</label>
+                        <textarea name="ejemplos" class="form-control" rows="3" required></textarea>
+                    </div>
+                    <div class="mb-3">
+                        <label for="recursos" class="form-label">Recursos:</label>
+                        <textarea name="recursos" class="form-control" rows="3" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary w-100">Enviar</button>
+                </form>
+            </div>
+            <div class="col-md-6">
+                <?php
+                include "api/cnx.php";
+
+                $sql = "SELECT * FROM lecciones";
+                $result = $conn->query($sql);
+
+                if ($result->num_rows > 0) {
+                    echo "<div class='table-responsive'><table class='table table-striped table-bordered'>
+                            <thead class='table-light'>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Lección</th>
+                                    <th>Contenido</th>
+                                    <th>Ejemplos</th>
+                                    <th>Recursos</th>
+                                    <th>Acciones</th>
+                                </tr>
+                            </thead>
+                            <tbody>";
+                    
+                    while ($row = $result->fetch_assoc()) {
+                        echo "<tr>
+                                <td>" . htmlspecialchars($row['id_leccion']) . "</td>
+                                <td>" . htmlspecialchars($row['leccion']) . "</td>
+                                <td>" . htmlspecialchars($row['contenido']) . "</td>
+                                <td>" . htmlspecialchars($row['ejemplo']) . "</td>
+                                <td>" . htmlspecialchars($row['recursos']) . "</td>
+                                <td class='text-center'>
+                                    <form action='edit.php' method='post' class='d-inline'>
+                                        <input type='hidden' name='id' value='" . htmlspecialchars($row['id_leccion']) . "'>
+                                        <button type='submit' class='btn btn-sm btn-success'>Editar</button>
+                                    </form>
+                                    <form action='delete.php' method='post' class='d-inline'>
+                                        <input type='hidden' name='id_leccion' value='" . htmlspecialchars($row['id_leccion']) . "'>
+                                        <button type='submit' class='btn btn-sm btn-danger'>Eliminar</button>
+                                    </form>
+                                </td>
+                              </tr>";
+                    }
+                    echo "</tbody></table></div>";
+                } else {
+                    echo "<p class='alert alert-info'>No hay datos disponibles.</p>";
                 }
-                echo "</table>";
-            } else {
-                echo "No hay datos disponibles.";
-            }
-            
-            $conn->close();
-            ?>
+
+                $conn->close();
+                ?>
+            </div>
         </div>
     </div>
 
-
-    <form action="api/ingresarleccion.php" method="post">
-        <label for="leccion">Lección:</label>
-        <input type="text" name="leccion" required><br><br>
-        
-        <label for="contenido">Contenido:</label>
-        <textarea  name="contenido" required></textarea><br><br>
-        
-        <label for="ejemplos">Ejemplos:</label>
-        <textarea  name="ejemplos"  required></textarea><br><br>
-        
-        <label for="recursos">Recursos:</label>
-        <textarea  name="recursos"  required></textarea><br><br>
-        
-        <button type="submit">Enviar</button>
-    </form>
+    <!-- Incluye Bootstrap JS (Opcional) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
-
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-
-    
-
