@@ -7,10 +7,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $ejemplos = $_POST['ejemplos'];
     $recursos = $_POST['recursos'];
 
-    echo "la leccion es : $leccion \n";
-    echo "el contenido es : $contenido \n";
-    echo "los ejemplos son : $ejemplos \n";
-    echo "los recursos son : $recursos \n";
+    echo "\nla leccion es : $leccion \n";
+    echo "\nel contenido es : $contenido \n";
+    echo "\nlos ejemplos son : $ejemplos \n";
+    echo "\nlos recursos son : $recursos \n";
 
 
 
