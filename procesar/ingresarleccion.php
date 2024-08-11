@@ -7,10 +7,26 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $ejemplos = $_POST['ejemplos'];
     $recursos = $_POST['recursos'];
 
-    echo "\nla leccion es : $leccion \n";
-    echo "\nel contenido es : $contenido \n";
-    echo "\nlos ejemplos son : $ejemplos \n";
-    echo "\nlos recursos son : $recursos \n";
+include "../api/cnx.php";
+ // Preparar la consulta SQL para insertar los datos
+ $sql = "INSERT INTO lecciones (leccion, contenido, ejemplos, recursos) 
+ VALUES (?, ?, ?, ?)";
+
+// Preparar la sentencia
+if ($stmt = $conn->prepare($sql)) {
+// Bind de los parámetros
+$stmt->bind_param("ssss", $leccion, $contenido, $ejemplos, $recursos);
+
+// Ejecutar la sentencia
+if ($stmt->execute()) {
+ echo "Los datos han sido insertados correctamente.";
+} else {
+ echo "Error al insertar los datos: " . $stmt->error;
+}
+
+// Cerrar la sentencia
+$stmt->close();
+
 
 
 
@@ -18,7 +34,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     echo "El formulario no se ha enviado correctamente.";
 }
 
-
+}
 
 
 ?>
