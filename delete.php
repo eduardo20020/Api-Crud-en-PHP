@@ -12,7 +12,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         if ($stmt->execute()) {
             echo "La lección ha sido eliminada correctamente.";
-            header("Location: index.php");
+            header("Location: agregar.php");
             exit();
         } else {
             echo "Error al eliminar la lección: " . $stmt->error;
