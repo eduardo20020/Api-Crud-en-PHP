@@ -10,7 +10,7 @@
         <div class="row">
             <div class="col-md-5">
                 <!-- Aquí iría tu formulario para insertar o editar datos -->
-                <form action="api/ingresarleccion.php" method="post" class="card p-4 shadow-sm">
+                <form action="api/ingresarleccion.php" method="post" class="card  shadow-sm">
                     <div class="mb-3">
                         <label for="leccion" class="form-label">Lección:</label>
                         <input type="text" name="leccion" class="form-control" required>
