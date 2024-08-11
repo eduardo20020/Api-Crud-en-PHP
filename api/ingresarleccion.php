@@ -10,7 +10,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     include "cnx.php";
 
     // Preparar la consulta SQL para insertar los datos
-    $sql = "INSERT INTO lecciones (leccion, contenido, ejemplos, recursos) 
+    $sql = "INSERT INTO lecciones (leccion, contenido, ejemplo, recursos) 
             VALUES (?, ?, ?, ?)";
 
     // Preparar la sentencia
