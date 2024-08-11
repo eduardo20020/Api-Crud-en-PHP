@@ -1,3 +1,17 @@
+<?php
+session_start();
+
+if (!isset($_SESSION['logueado']) || $_SESSION['logueado'] !== true) {
+    // Redirige al usuario a la página de inicio de sesión si no está logueado
+    header("Location: index.html");
+    exit();
+}
+
+
+
+
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
