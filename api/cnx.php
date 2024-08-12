@@ -8,6 +8,7 @@ $dbname = "ApiDatabase";  // Nombre de la base de datos a la que quieres conecta
 
 // Crear conexión
 $conn = new mysqli($servername, $username, $password, $dbname);
+$conn->set_charset("utf8");
 
 // Verificar la conexión
 if ($conn->connect_error) {
