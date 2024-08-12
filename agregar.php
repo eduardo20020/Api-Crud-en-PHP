@@ -32,7 +32,9 @@ if (!isset($_SESSION['logueado']) || $_SESSION['logueado'] !== true) {
                         <a class="nav-link active" aria-current="page" href="#">Inicio</a>
                     </li>
                     <li class="nav-item">
-                        <button onclick="cerrarSesion()">salir</button>
+                        <form action="local/logout.php" method="post">
+                            <input type="submit" value="salir">
+                        </form>
                     </li>
                 </ul>
             </div>
@@ -118,6 +120,7 @@ if (!isset($_SESSION['logueado']) || $_SESSION['logueado'] !== true) {
      <script>
     function cerrarSesion() {
         fetch('local/logout.php', { method: 'POST' });
+
     };
 
     </script>
