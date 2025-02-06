@@ -127,6 +127,6 @@ Este proyecto está licenciado bajo la Licencia MIT. Mira el archivo [LICENSE](L
 - **LinkedIn**: [Tu Perfil](https://www.linkedin.com/in/tu_usuario)
 - **Twitter**: [@tu_usuario](https://twitter.com/tu_usuario)
 
----
+---Brandon Sanchez
 
 🔧 **Tip**: Asegúrate de mantener tu API segura y actualizada con las últimas dependencias y parches.
